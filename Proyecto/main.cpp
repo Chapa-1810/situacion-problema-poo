@@ -4,9 +4,9 @@
 using namespace std;
 
 int main(){
-    Video lunes;
-    cout << lunes.str() << endl;
+  Video lunes;
+  //cout << lunes.str() << endl;
     
-    cout<<"Hello Word!"<<endl;
-    return 0;
+  cout<<"Hello Word!"<<endl;
+  return 0;
 }
