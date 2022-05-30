@@ -51,5 +51,5 @@ string Series::str(){
     episodios += "\n  " + episodios_[num_episodio].str();
   }
 
-  return iD_ + ", " + titulo_ + ", " + to_string(duracion_) + ", " + genero_ + ", " + to_string(calculaCalificacionPromedio()) + "\nEpisodios: " + episodios;
+  return "Serie, " + iD_ + ", " + titulo_ + ", " + to_string(duracion_) + ", " + genero_ + ", " + to_string(calculaCalificacionPromedio()) + "\nEpisodios: " + episodios;
 }
