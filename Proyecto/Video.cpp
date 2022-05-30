@@ -66,3 +66,5 @@ double Video::getCalificacion(){
 string Video::str(){
     return iD_ + "," + titulo_ + "," + to_string(duracion_) + "," + genero_ + "," + to_string(calificacion_promedio_);
 }
+    //Se comento porque esta ahora sera una funcion virtual pura
+

@@ -34,7 +34,15 @@ class Video{
     double getCalificacion();    
 
     //Methods
-    string str();
+    virtual string str();
+    //virtual string str() = 0;
+
+    // Si a la clase virtual, se le hace un = 0, en ese caso ya entra 
+    // a ser una funcion pura o abstracta, esto en el .cpp de Video, significa que 
+    // no se debe construir la funcion, solo se debe construir en las
+    // clases hijas, si se hace de esta forma, la clase se llama clase
+    // base abstracta y esta no puede ser declarada en el main, se puede hacer un
+    // apuntador de esta, pero no un objeto Video por si solo 
 };
 
 #endif

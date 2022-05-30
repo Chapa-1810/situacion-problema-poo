@@ -18,7 +18,11 @@ void Series::setEpisodio(Episodio episodio, int num_episodio){
 }
 
 void Series::setCantidad(int cantidad){
-  cantidad_ = cantidad;
+  if (cantidad < 0){
+    cantidad_ = 0;
+  } else if (cantidad > 4){
+    cantidad_ = 4;
+  }
 }
 
 //Getters
