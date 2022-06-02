@@ -15,6 +15,9 @@ class Pelicula:public Video{
     //Constructores    
     Pelicula();
     Pelicula(string iD, string titulo, int duracion, string genero, double calificacion_promedio);
+
+    //Destructor
+    ~Pelicula();
     
     //Setters
     void setOscares(int oscares);

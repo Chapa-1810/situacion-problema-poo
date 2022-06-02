@@ -13,6 +13,10 @@ Pelicula::Pelicula(string iD, string titulo, int duracion, string genero, double
   oscares_ = 0;
 }
 
+//Destructor
+Pelicula::~Pelicula(){
+  
+}
     
 //Setters
 void Pelicula::setOscares(int oscares){
