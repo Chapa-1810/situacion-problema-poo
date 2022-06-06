@@ -8,7 +8,7 @@
 
 
 #include <iostream>
-#include "Peliculas.hpp"
+#include "Peliculas.h"
 
 int menuPeliculas(){
     int iOpcion;
@@ -28,7 +28,7 @@ int menuPeliculas(){
 // *******************************
 int main() {
     // se manda llamar al constructor - default
-    Peliculas peliculas{};
+    Peliculas peliculas;
     
     int iOpcion;
     string sGenero, sId;
@@ -48,7 +48,7 @@ int main() {
                 peliculas.leerArchivo();
                 break;
             case 2:// 2. Reporte de todas las peliculas" <<
-                peliculas.reporteTodasLasPeliculas();
+                peliculas.reporteTodasPeliculas();
                 break;
             case 3:// 3. Reporte de todas las peliculas con cierta Calificacion" <<
                 cout << "Ingresa la calificacion:";

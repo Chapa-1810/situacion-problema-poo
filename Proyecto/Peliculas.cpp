@@ -39,7 +39,7 @@ void Peliculas::leerArchivo(){
     fstream fin;
 	string row[6];
 	string line, word;
-	fin.open("/Users/alexi/OneDrive/Escritorio/Semestre 2 IRS/POO", ios::in);
+	fin.open("/Users/alexi/OneDrive/Escritorio/Semestre 2 IRS/POO/situacion-problema-poo/Proyecto/Pelicula.csv", ios::in);
 
 	cantidad_ = 0;
 
@@ -79,7 +79,7 @@ void Peliculas::reporteTodasPeliculas(){
 void Peliculas::reporteConCalificacion(int calificacion){
     bool check_calificacion = false;
     for (int index_pelicula = 0; index_pelicula < cantidad_; index_pelicula++){
-        if (arrPtrPeliculas_[index_pelicula]->getCalificacion() == calificacion){
+        if (arrPtrPeliculas_[index_pelicula]->getCalificacion() >= calificacion){
             if (!check_calificacion){  check_calificacion = true;   }
 
            cout << "- " << arrPtrPeliculas_[index_pelicula]->str() << endl;
