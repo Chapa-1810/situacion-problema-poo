@@ -1,40 +1,72 @@
+//
+//  main.cpp
+//  SituacionProblemaFinal BUENA
+//
+//  Created by Ma. Guadalupe Roque on 5/21/22.
+//  Copyright © 2022 Invitado. All rights reserved.
+//
+
+
 #include <iostream>
-#include "Video.h"  
-#include "Series.h"
+#include "Peliculas.h"
 
-
-using namespace std;
-
-int main(){
-  Video video1, video2("01", "Drama de los rayados", 129, "Drama", 100);
-  // Como ahora, Video.h tiene una funcion virtual pura, esta es una clase
-  // abstracta entonces no se pueden declarar objetos
-  
-  Series serie1, serie2("02","La Reina", 300, "Drama", 0);
-  Episodio episodio1("Coronacion", 1, 10);
-  // Declaracion arreglo de la clase video
-  Video *arrPtrVideo[] = {&video1, &video2, &serie2};  
+int menuPeliculas(){
+    int iOpcion;
     
-  cout <<"Pointer de arreglo de videos: " <<endl;
-  for (int i = 0; i < 3; i++){
-    cout << arrPtrVideo[i] << endl;
-  }
-
-  // Esto es el polimorfismo, cuando se utiliza un mismo metodo VIRTUAL
-  // para mandar a llamar un metodo de diferentess tipos de clases, esto es
-  // posible gracias al uso de un arreglo de apuntdadores, cuando se declara
-  // apuntador, se le tiene que dar &variable, esto porque el & representa una
-  // direccion, al tener el arreglo de apuntadores, de clases hijas de la clase 
-  // padre se obtiene un apuntador de tipo Video.  
-  cout <<"Pointer arreglo virtual function CLASES: " <<endl;
-  for (int i = 0; i < 3; i++){
-    cout << arrPtrVideo[i]->str() << endl;
-  }
-
-  cout <<"Pointer arreglo virtual function VIDEO: " <<endl;
-  for (int i = 0; i < 3; i++){
-    cout << arrPtrVideo[i]->Video::str() << endl;
-  }
-
-  return 0;
+    cout <<
+    "\n ** Peliculas " <<
+    "\n1. Leer Peliculas  desde Archivo" <<
+    "\n2. Reporte de todas las peliculas" <<
+    "\n3. Reporte de peliculas que tienen cierta Calificacion" <<
+    "\n4. Reporte de peliculas de cierto genero" <<
+    "\n0. SALIR\nTeclea la opcion:";
+    cin >> iOpcion;
+    return iOpcion;
 }
+// ******************************
+//            AVANCE 2
+// *******************************
+int main() {
+    // se manda llamar al constructor - default
+    Peliculas peliculas;
+    
+    int iOpcion;
+    string sGenero, sId;
+    double dCal;
+    
+    // Leer el archivo de peliculas y cargarlo en el arreglo de apuntadores
+    // dentro de la clase Peliculas
+    peliculas.leerArchivo();
+    
+    // 1o Inicializar la vcc antes del ciclo
+    iOpcion = menuPeliculas();
+    // 2a Incluir en la condicion la vcc
+    while (iOpcion != 0){
+        switch (iOpcion) {
+                // ***** Peliculas
+            case 1: // 1. Leer Peliculas  desde Archivo" <<
+                peliculas.leerArchivo();
+                break;
+            case 2:// 2. Reporte de todas las peliculas" <<
+                peliculas.reporteTodasPeliculas();
+                break;
+            case 3:// 3. Reporte de todas las peliculas con cierta Calificacion" <<
+                cout << "Ingresa la calificacion:";
+                cin >> dCal;
+                peliculas.reporteConCalificacion(dCal);
+                break;
+            case 4: // 4. Reporte de todas las peliculas con cierto genero" <<
+                cout << "Ingresa el Genero:";
+                cin >> sGenero;
+                peliculas.reporteGenero(sGenero);
+                break;
+            default:
+                cout << "Opcion Incorrecta!!\n";
+                break;
+        }
+        //3o Actualizar la vcc dentro del ciclo
+        iOpcion = menuPeliculas();
+    }
+    return 0;
+}
+

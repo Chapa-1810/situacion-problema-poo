@@ -36,22 +36,21 @@ int Peliculas::getCantidadPeliculas(){
 
 //Methods
 void Peliculas::leerArchivo(){
-    fstream fin;
+  fstream fin;
 	string row[6];
 	string line, word;
-	fin.open("/Users/alexi/OneDrive/Escritorio/Semestre 2 IRS/POO/situacion-problema-poo/Proyecto/Pelicula.csv", ios::in);
+	fin.open("PC/Pelicula.csv", ios::in);
 
 	cantidad_ = 0;
 
 	while (getline(fin, line)) {
 		stringstream s(line);
-
 		int iR = 0;
 		while (getline(s, word, ',')) {
 			row[iR++] = word;
 		}
 
-        arrPtrPeliculas_[cantidad_] = new Pelicula(row[0], row[1], stoi(row[2]), row[3], stod(row[4]), stoi(row[5]));
+    setPtrPeliculas(new Pelicula(row[0], row[1], stoi(row[2]), row[3], stod(row[4]), stoi(row[5])));
 	}
     fin.close();
 

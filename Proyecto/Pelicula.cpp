@@ -9,7 +9,7 @@ Pelicula::Pelicula(): Video(){
   oscares_ = 0;
 }
 
-Pelicula::Pelicula(string iD, string titulo, int duracion, string genero, double calificacion_promedio, int oscares) : Video(iD, titulo, duracion, genero, calificacion_promedio_){
+Pelicula::Pelicula(string iD, string titulo, int duracion, string genero, double calificacion_promedio, int oscares) : Video(iD, titulo, duracion, genero, calificacion_promedio){
   oscares_ = oscares;
 }
 
@@ -30,5 +30,5 @@ int Pelicula::getOscares(){
 
 //Methods
 string Pelicula::str(){
-  return iD_ + ", " + titulo_ + ", " + to_string(duracion_) + ", " + genero_ + ", " + to_string(calificacion_promedio_) + "Oscares: " + to_string(oscares_);
+  return iD_ + ", " + titulo_ + ", " + to_string(duracion_) + ", " + genero_ + ", " + to_string(calificacion_promedio_) + " Oscares: " + to_string(oscares_);
 }
