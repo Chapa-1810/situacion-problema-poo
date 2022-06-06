@@ -77,9 +77,31 @@ void Peliculas::reporteTodasPeliculas(){
 }
 
 void Peliculas::reporteConCalificacion(int calificacion){
-    //TODO
+    bool check_calificacion = false;
+    for (int index_pelicula = 0; index_pelicula < cantidad_; index_pelicula++){
+        if (arrPtrPeliculas_[index_pelicula]->getCalificacion() == calificacion){
+            if (!check_calificacion){  check_calificacion = true;   }
+
+           cout << "- " << arrPtrPeliculas_[index_pelicula]->str() << endl;
+        }
+    }
+
+    if (!check_calificacion){
+        cout << "No se encontro peliculas con la calificacion deseada." << endl;
+    }
 }
 
 void Peliculas::reporteGenero(string genero){
-    //TODO  
+    bool check_genero = false;
+    for (int index_pelicula = 0; index_pelicula < cantidad_; index_pelicula++){
+        if (arrPtrPeliculas_[index_pelicula]->getGenero() == genero){
+            if (!check_genero){  check_genero = true;   }
+
+           cout << "- " << arrPtrPeliculas_[index_pelicula]->str() << endl;
+        }
+    }
+
+    if (!check_genero){
+        cout << "No se encontro peliculas con la genero deseada." << endl;
+    } 
 }

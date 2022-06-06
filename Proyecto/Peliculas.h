@@ -25,7 +25,7 @@ class Peliculas{
     void setCantidadPeliculas(int cantidad);
 
     //Getters
-    Pelicula *getPtrPelicula(string titulo);
+    Pelicula *getPtrPelicula(string iD);
     int getCantidadPeliculas();
 
     //Methods
