@@ -39,7 +39,7 @@ void Peliculas::leerArchivo(){
     fstream fin;
 	string row[6];
 	string line, word;
-	fin.open("", ios::in);
+	fin.open("/Users/alexi/OneDrive/Escritorio/Semestre 2 IRS/POO", ios::in);
 
 	cantidad_ = 0;
 
@@ -95,7 +95,7 @@ void Peliculas::reporteGenero(string genero){
     bool check_genero = false;
     for (int index_pelicula = 0; index_pelicula < cantidad_; index_pelicula++){
         if (arrPtrPeliculas_[index_pelicula]->getGenero() == genero){
-            if (!check_genero){  check_genero = true;   }
+            if (!check_genero){ check_genero = true; }
 
            cout << "- " << arrPtrPeliculas_[index_pelicula]->str() << endl;
         }
