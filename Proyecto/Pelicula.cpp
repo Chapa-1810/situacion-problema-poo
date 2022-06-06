@@ -9,8 +9,8 @@ Pelicula::Pelicula(): Video(){
   oscares_ = 0;
 }
 
-Pelicula::Pelicula(string iD, string titulo, int duracion, string genero, double calificacion_promedio) : Video(iD, titulo, duracion, genero, 0){
-  oscares_ = 0;
+Pelicula::Pelicula(string iD, string titulo, int duracion, string genero, double calificacion_promedio, int oscares) : Video(iD, titulo, duracion, genero, calificacion_promedio_){
+  oscares_ = oscares;
 }
 
 //Destructor

@@ -14,7 +14,7 @@ class Pelicula:public Video{
   public:
     //Constructores    
     Pelicula();
-    Pelicula(string iD, string titulo, int duracion, string genero, double calificacion_promedio);
+    Pelicula(string iD, string titulo, int duracion, string genero, double calificacion_promedio, int oscares_);
 
     //Destructor
     ~Pelicula();

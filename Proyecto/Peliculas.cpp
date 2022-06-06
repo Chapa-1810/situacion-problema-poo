@@ -7,7 +7,9 @@ Peliculas::Peliculas(){
     
 //Setters
 void Peliculas::setPtrPeliculas(Pelicula *arrPtrPeliculas){
-    arrPtrPeliculas_ = arrPtrPeliculas;
+    if (cantidad_ < kMaxPeliculas){
+    arrPtrPeliculas_[cantidad_++] = arrPtrPeliculas;
+    }
 }
 
 void Peliculas::setCantidadPeliculas(int cantidad){
@@ -18,9 +20,9 @@ void Peliculas::setCantidadPeliculas(int cantidad){
 
 
 //Getters
-Pelicula *Peliculas::getPtrPelicula(string titulo){
+Pelicula *Peliculas::getPtrPelicula(string iD){
     for (int index_pelicula = 0; index_pelicula < cantidad_; index_pelicula++){
-        if (arrPtrPeliculas_[index_pelicula]->getNombre() == titulo){
+        if (arrPtrPeliculas_[index_pelicula]->getId() == iD){
             return arrPtrPeliculas_[index_pelicula];
         }
     }
@@ -34,7 +36,28 @@ int Peliculas::getCantidadPeliculas(){
 
 //Methods
 void Peliculas::leerArchivo(){
-    //TODO
+    fstream fin;
+	string row[6];
+	string line, word;
+	fin.open("", ios::in);
+
+	cantidad_ = 0;
+
+	while (getline(fin, line)) {
+		stringstream s(line);
+
+		int iR = 0;
+		while (getline(s, word, ',')) {
+			row[iR++] = word;
+		}
+
+        arrPtrPeliculas_[cantidad_] = new Pelicula(row[0], row[1], stoi(row[2]), row[3], stod(row[4]), stoi(row[5]));
+	}
+    fin.close();
+
+    for (int iR = 0; iR < cantidad_; iR++){
+        cout << iR << "-" << arrPtrPeliculas_[iR]->str() << endl;
+    }
 }
 
 

@@ -5,12 +5,15 @@
 #include <string.h>
 #include <stdio.h>
 #include "Pelicula.h"
+#include <fstream>
+#include <sstream>
 using namespace std;
+const int kMaxPeliculas = 50;
 
 class Peliculas{
   protected:
-    const int kMaxPeliculas = 50;
-    Pelicula *arrPtrPeliculas_[50]; 
+    
+    Pelicula *arrPtrPeliculas_[kMaxPeliculas]; 
     int cantidad_ ;
 
   public:
