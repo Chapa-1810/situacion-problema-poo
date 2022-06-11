@@ -1,37 +1,37 @@
-#ifndef VIDEO_h
-#define VIDEO_h
+#ifndef Video_h
+#define Video_h
 
 #include <iostream>
 #include <string.h>
 #include <stdio.h>
 using namespace std;
 
-class Video{
-  protected:
-    string iD_;
-    string titulo_;
-    int duracion_;
-    string genero_;
-    double calificacion_promedio_;
+class Video {
+protected:
+    string iD;
+    string titulo;
+    int duracion;
+    string genero;
+    double calificacion_promedio;
 
-  public:
+public:
     //Constructores    
     Video();
-    Video(string iD, string titulo, int duracion, string genero, double calificacion_promedio);
-    
+    Video(string iD_, string titulo_, int duracion_, string genero_, double calificacion_promedio_);
+
     //Setters
-    void setId(string iD);
-    void setNombre(string titulo);
-    void setDuracion(int duracion);
-    void setGenero(string genero);
-    void setCalificacion(double calificacion_promedio); 
+    void setId(string iD_);
+    void setNombre(string titulo_);
+    void setDuracion(int duracion_);
+    void setGenero(string genero_);
+    void setCalificacion(double calificacion_promedio_);
 
     //Getters
     string getId();
     string getNombre();
     int getDuracion();
     string getGenero();
-    double getCalificacion();    
+    double getCalificacion();
 
     //Methods
     virtual string str();
@@ -46,3 +46,5 @@ class Video{
 };
 
 #endif
+
+#pragma once
