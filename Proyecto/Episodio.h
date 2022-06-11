@@ -28,7 +28,7 @@ class Episodio{
     int getCalificacion();  
 
     //Methods
-    string str();
+    string str() const;
 };
 
 #endif

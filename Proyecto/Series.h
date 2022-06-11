@@ -29,6 +29,7 @@ class Series:public Video{
     //Methods
     double calculaCalificacionPromedio();
     string str();
+    friend ostream &operator<<(ostream &out, const Series &pelicula);
 };
 
 #endif

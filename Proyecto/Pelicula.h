@@ -27,6 +27,7 @@ class Pelicula:public Video{
 
     //Methods
     string str();
+    friend ostream &operator<<(ostream &out, const Pelicula &pelicula);
 };
 
 #endif

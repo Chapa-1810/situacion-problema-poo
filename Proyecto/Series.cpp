@@ -45,6 +45,7 @@ double Series::calculaCalificacionPromedio(){
     calificacion_promedio += episodios_[num_episodio].getCalificacion();
   }
   if (cantidad_ > 0){
+    calificacion_promedio_ = calificacion_promedio / cantidad_;
     return calificacion_promedio/cantidad_;
   } else return 0;
 }
@@ -55,5 +56,14 @@ string Series::str(){
     episodios += "\n  " + episodios_[num_episodio].str();
   }
 
-  return "Serie, " + iD_ + ", " + titulo_ + ", " + to_string(duracion_) + ", " + genero_ + ", " + to_string(calculaCalificacionPromedio()) + "\nEpisodios: " + episodios;
+  return "Serie " + iD_ + ", " + titulo_ + ", " + to_string(duracion_) + ", " + genero_ + ", " + to_string(calculaCalificacionPromedio()) + "\nEpisodios: " + episodios;
+}
+
+ostream &operator<<(ostream &out, const Series &series){
+  string episodios = " ";
+  for (int num_episodio = 0; num_episodio < series.cantidad_; num_episodio++){
+    episodios += "\n  " + series.episodios_[num_episodio].str();
+  }
+  out << "Series " << series.iD_ << ", " << series.titulo_ << ", " << to_string(series.duracion_) << ", " << series.genero_ << ", " << to_string(series.calificacion_promedio_) << "\nEpisodios: " << episodios;
+  return out;
 }

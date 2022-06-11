@@ -32,3 +32,8 @@ int Pelicula::getOscares(){
 string Pelicula::str(){
   return iD_ + ", " + titulo_ + ", " + to_string(duracion_) + ", " + genero_ + ", " + to_string(calificacion_promedio_) + " Oscares: " + to_string(oscares_);
 }
+
+ostream &operator<<(ostream &out, const Pelicula &pelicula){
+  out << "Peliculas " << pelicula.iD_ << ", " << pelicula.titulo_ << ", " << to_string(pelicula.duracion_) << ", " << pelicula.genero_ << ", " << to_string(pelicula.calificacion_promedio_) << " Oscares: " << to_string(pelicula.oscares_);
+  return out;
+}
