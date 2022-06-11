@@ -6,29 +6,30 @@
 #include <stdio.h>
 using namespace std;
 
-class Episodio{
-  protected:
-    string titulo_;
-    int temporada_;
-    int calificacion_;
+class Episodio {
+protected:
+    string titulo;
+    int temporada;
+    int calificacion;
 
-  public:
+public:
     //Constructores    
     Episodio();
-    Episodio(string titulo, int temporada, int calificacion);
-    
+    Episodio(string titulo_, int temporada_, int calificacion_);
+
     //Setters
-    void setTitulo(string titulo);
-    void setTemporada(int temporada);
-    void setCalificacion(int calificacion);
+    void setTitulo(string titulo_);
+    void setTemporada(int temporada_);
+    void setCalificacion(int calificacion_);
 
     //Getters
     string getTitulo();
     int getTemporada();
-    int getCalificacion();  
+    int getCalificacion();
 
     //Methods
     string str();
 };
 
 #endif
+#pragma once

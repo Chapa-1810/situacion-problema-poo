@@ -1,34 +1,40 @@
-#ifndef SERIES_h
-#define SERIES_h
+#ifndef Series_h
+#define Series_h
 
 #include <iostream>
 #include <string.h>
 #include <stdio.h>
-#include "Video.h"
-#include "Episodio.h"
+#include "Serie.h"
+#include <fstream>
+#include <sstream>
 using namespace std;
+const int kMaxSeries = 50;
 
-class Series:public Video{
-  protected:
-    Episodio episodios_[5];
-    int cantidad_;
+class Series {
+protected:
 
-  public:
+    Serie* arrPtrSeries[kMaxSeries];
+    int cantidad;
+
+public:
     //Constructores    
     Series();
-    Series(string iD, string titulo, int duracion, string genero, double calificacion_promedio);
-    
+
     //Setters
-    void setEpisodio(Episodio episodio, int num_episodio);
-    void setCantidad(int cantidad);
+    void setPtrSeries(Serie* arrPtrSeries_);
+    void setCantidadSeries(int cantidad_);
 
     //Getters
-    Episodio getEpisodio(int num_episodio);
-    int getCantidad();   
+    Serie* getPtrSerie(string iD_);
+    int getCantidadSeries();
 
     //Methods
-    double calculaCalificacionPromedio();
-    string str();
+    void leerArchivo();
+
+    void reporteTodasSeries();
+    void reporteConCalificacionSeries(int calificacion_);
+    void reporteGeneroSeries(string genero_);
 };
 
 #endif
+#pragma once

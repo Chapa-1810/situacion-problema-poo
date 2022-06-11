@@ -7,26 +7,30 @@
 #include "Video.h"
 using namespace std;
 
-class Pelicula:public Video{
-  protected:
-    int oscares_;
+class Pelicula :public Video {
+protected:
+    int oscares;
 
-  public:
+public:
     //Constructores    
     Pelicula();
-    Pelicula(string iD, string titulo, int duracion, string genero, double calificacion_promedio, int oscares_);
+    Pelicula(string iD_, string titulo_, int duracion_, string genero_, double calificacion_promedio_, int oscares_);
 
     //Destructor
     ~Pelicula();
-    
+
     //Setters
-    void setOscares(int oscares);
+    void setOscares(int oscares_);
 
     //Getters
-    int getOscares();   
+    int getOscares();
 
     //Methods
     string str();
+
+    friend ostream& operator<<(ostream& out, const Pelicula &v);
+
 };
 
 #endif
+#pragma once

@@ -5,30 +5,37 @@ using namespace std;
 #include "Pelicula.h"
 
 //Constructores
-Pelicula::Pelicula(): Video(){
-  oscares_ = 0;
+Pelicula::Pelicula() : Video() {
+    oscares = 0;
 }
 
-Pelicula::Pelicula(string iD, string titulo, int duracion, string genero, double calificacion_promedio, int oscares) : Video(iD, titulo, duracion, genero, calificacion_promedio){
-  oscares_ = oscares;
+Pelicula::Pelicula(string iD_, string titulo_, int duracion_, string genero_, double calificacion_promedio_, int oscares_) : Video(iD_, titulo_, duracion_, genero_, calificacion_promedio_) {
+    oscares = oscares_;
 }
+
+/*Video(iD, titulo, duracion, genero, calificacion) {}*/
 
 //Destructor
-Pelicula::~Pelicula(){
-  
+Pelicula::~Pelicula() {
+
 }
-    
+
 //Setters
-void Pelicula::setOscares(int oscares){
-  oscares_ = oscares;
+void Pelicula::setOscares(int oscares_) {
+    oscares = oscares_;
 }
 
 //Getters
-int Pelicula::getOscares(){
-  return oscares_;
-} 
+int Pelicula::getOscares() {
+    return oscares;
+}
 
 //Methods
-string Pelicula::str(){
-  return iD_ + ", " + titulo_ + ", " + to_string(duracion_) + ", " + genero_ + ", " + to_string(calificacion_promedio_) + " Oscares: " + to_string(oscares_);
+string Pelicula::str() {
+    return iD + ", " + titulo + ", " + to_string(duracion) + ", " + genero + ", " + to_string(calificacion_promedio) + to_string(oscares);
+}
+
+ostream& operator<<(ostream& out, const Pelicula& v) {
+    out << v.iD <<  ',' << v.titulo << v.duracion << v.genero << v.calificacion_promedio << "," << endl;
+    return out;
 }
