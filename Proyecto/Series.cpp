@@ -100,7 +100,7 @@ void Series::reporteTodasSeries() {
 
 void Series::reporteConCalificacionSeries(int calificacion_) {
     bool check_calificacion = false;
-    for (int index_serie = 0; index_serie < cantidad_; index_serie++) {
+    for (int index_serie = 0; index_serie < cantidad; index_serie++) {
         if (arrPtrSeries[index_serie]->getCalificacion() >= calificacion_) {
             if (!check_calificacion) { check_calificacion = true; }
 
@@ -115,7 +115,7 @@ void Series::reporteConCalificacionSeries(int calificacion_) {
 
 void Series::reporteGeneroSeries(string genero) {
     bool check_genero = false;
-    for (int index_serie = 0; index_serie < cantidad_; index_serie++) {
+    for (int index_serie = 0; index_serie < cantidad; index_serie++) {
         if (arrPtrSeries[index_serie]->getGenero() == genero) {
             if (!check_genero) { check_genero = true; }
 
@@ -126,4 +126,12 @@ void Series::reporteGeneroSeries(string genero) {
     if (!check_genero) {
         cout << "No se encontro series con el genero deseada." << endl;
     }
+}
+
+void Series::caluclarCalificacionSeries(){
+    double promedio = 0;
+    for (int index_serie = 0; index_serie < cantidad; index_serie++) {
+        promedio += arrPtrSeries[index_serie]->calculaCalificacionPromedio();
+    }
+    cout << "El promedio de la calificacion de las " << cantidad << " series es de: " << promedio / cantidad << endl;
 }

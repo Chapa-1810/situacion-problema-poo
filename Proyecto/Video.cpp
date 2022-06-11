@@ -9,7 +9,7 @@ Video::Video() {
     titulo = " ";
     duracion = 0;
     genero = " ";
-    calificacion_promedio_ = 0;
+    calificacion_promedio = 0;
 }
 
 Video::Video(string iD_, string titulo_, int duracion_, string genero_, double calificacion_promedio_) {

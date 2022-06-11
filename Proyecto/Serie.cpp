@@ -45,6 +45,7 @@ double Serie::calculaCalificacionPromedio() {
         calificacion_promedio_ += episodios[num_episodio_].getCalificacion();
     }
     if (cantidad > 0) {
+        setCalificacion(calificacion_promedio_ / cantidad);
         return calificacion_promedio_ / cantidad;
     }
     else return 0;

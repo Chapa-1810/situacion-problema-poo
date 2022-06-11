@@ -34,6 +34,7 @@ public:
     void reporteTodasSeries();
     void reporteConCalificacionSeries(int calificacion_);
     void reporteGeneroSeries(string genero_);
+    void caluclarCalificacionSeries();
 };
 
 #endif
