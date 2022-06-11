@@ -35,6 +35,7 @@ int Series::getCantidadSeries() {
 
 
 //Methods
+<<<<<<< HEAD
 void Series::leerArchivo() {
     string line, word, row[6];
     int iRow{}, iS{}, cantEpisodios{};
@@ -80,6 +81,17 @@ void Series::leerArchivo() {
 
     lectura.close();
 
+=======
+double Series::calculaCalificacionPromedio(){
+  double calificacion_promedio = 0;
+  for (int num_episodio = 0; num_episodio < cantidad_; num_episodio++){
+    calificacion_promedio += episodios_[num_episodio].getCalificacion();
+  }
+  if (cantidad_ > 0){
+    calificacion_promedio_ = calificacion_promedio / cantidad_;
+    return calificacion_promedio/cantidad_;
+  } else return 0;
+>>>>>>> 8ef5d42581c3adac943a8f5a369ade40b36dd4b2
 }
 
 
