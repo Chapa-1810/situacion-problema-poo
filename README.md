@@ -2,7 +2,7 @@
 # A00832711
 # Avance 1
 
-![](uml.png)
+![UML](https://github.com/Chapa-1810/situacion-problema-poo/blob/Crear-Proyecto/UML.png)
 
 # Avance 2
 
