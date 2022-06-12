@@ -29,6 +29,8 @@ public:
     //Methods
     double calculaCalificacionPromedio();
     string str();
+
+    friend ostream& operator<<(ostream& out, const Serie &v);
 };
 
 #endif

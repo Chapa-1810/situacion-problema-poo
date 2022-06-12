@@ -59,3 +59,8 @@ string Serie::str() {
 
     return "Serie: " + iD + ", " + titulo + ", " + to_string(duracion) + ", " + genero + ", " + to_string(calculaCalificacionPromedio()) + "\nEpisodios: " + episodios_;
 }
+
+ostream& operator<<(ostream& out, const Serie& v) {
+    out << v.iD <<  ',' << v.titulo << v.duracion << v.genero << v.calificacion_promedio << "," << endl;
+    return out;
+}

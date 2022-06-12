@@ -100,7 +100,7 @@ int main() {
             //  videos.reporteVideos();
             break;
         case 9:  // 9. Calcular calificación de todas las Series
-            //series.calcularCalificacionSeries();  
+            series.calcularCalificacionSeries();  
             break;
         default:
             cout << "Opcion Incorrecta\n";

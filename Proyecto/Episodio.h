@@ -28,7 +28,7 @@ public:
     int getCalificacion();
 
     //Methods
-    string str() const;
+    string str();
 };
 
 #endif

@@ -39,7 +39,7 @@ void Peliculas::leerArchivo() {
     fstream fin;
     string row[6];
     string line, word;
-    fin.open("C:\\Users\\Andrés Carrizales\\Desktop\\Andrés\\2do - SEMESTRE\\TC1030.301 - Programación orientada a objetos\\Situacion_Pro\\situacion-problema-poo\\Proyecto\\Pelicula.csv", ios::in);
+    fin.open("Proyecto/Pelicula.csv", ios::in);
 
     cantidad = 0;
 

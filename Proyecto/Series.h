@@ -32,9 +32,9 @@ public:
     void leerArchivo();
 
     void reporteTodasSeries();
-    void reporteConCalificacionSeries(int calificacion_);
+    void reporteConCalificacionSeries(double calificacion_);
     void reporteGeneroSeries(string genero_);
-    void caluclarCalificacionSeries();
+    void calcularCalificacionSeries();
 };
 
 #endif

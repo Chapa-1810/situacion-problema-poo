@@ -41,7 +41,7 @@ void Series::leerArchivo() {
     fstream lectura;
     Episodio* episodio;
     
-    lectura.open("C:\\Users\\Andrés Carrizales\\Desktop\\Andrés\\2do - SEMESTRE\\TC1030.301 - Programación orientada a objetos\\Serie2021.csv", ios::in);
+    lectura.open("Proyecto/Serie2021.csv", ios::in);
 
     cantidad = 0;
 
@@ -56,7 +56,7 @@ void Series::leerArchivo() {
     }
     lectura.close();
 
-    lectura.open("C:\\Users\\Andrés Carrizales\\Desktop\\Andrés\\2do - SEMESTRE\\TC1030.301 - Programación orientada a objetos\\Episodio2021.csv", ios::in);
+    lectura.open("Proyecto/Episodio2021.csv", ios::in);
     while (getline(lectura, line)) {
         std::stringstream registro(line);
 
@@ -98,7 +98,7 @@ void Series::reporteTodasSeries() {
     cout << "El promedio de la calificacoin de las " << cantidad << " peliculas es de: " << sum_calificacion / cantidad << endl;
 }
 
-void Series::reporteConCalificacionSeries(int calificacion_) {
+void Series::reporteConCalificacionSeries(double calificacion_) {
     bool check_calificacion = false;
     for (int index_serie = 0; index_serie < cantidad; index_serie++) {
         if (arrPtrSeries[index_serie]->getCalificacion() >= calificacion_) {
@@ -128,7 +128,7 @@ void Series::reporteGeneroSeries(string genero) {
     }
 }
 
-void Series::caluclarCalificacionSeries(){
+void Series::calcularCalificacionSeries(){
     double promedio = 0;
     for (int index_serie = 0; index_serie < cantidad; index_serie++) {
         promedio += arrPtrSeries[index_serie]->calculaCalificacionPromedio();
