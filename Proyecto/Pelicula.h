@@ -29,7 +29,6 @@ public:
     string str();
 
     friend ostream& operator<<(ostream& out, const Pelicula &v);
-
 };
 
 #endif
