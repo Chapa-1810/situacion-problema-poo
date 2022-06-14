@@ -29,6 +29,8 @@ public:
 
     //Methods
     string str();
+
+    friend ostream& operator<<(ostream& out, const Episodio& v);
 };
 
 #endif

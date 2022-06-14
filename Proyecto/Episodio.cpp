@@ -49,3 +49,8 @@ int Episodio::getCalificacion() {
 string Episodio::str() {
     return titulo + ", " + to_string(temporada) + ", " + to_string(calificacion);
 }
+
+ostream& operator<<(ostream& out, const Episodio& v) {
+    out << v.titulo <<  "," << v.temporada <<  "," << v.calificacion << endl;
+    return out;
+}

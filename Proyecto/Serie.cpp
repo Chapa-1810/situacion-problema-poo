@@ -39,7 +39,7 @@ int Serie::getCantidad() {
 }
 
 //Methods
-double Serie::calculaCalificacionPromedio() {
+double Serie::calculaCalificacionPromedio(){
     double calificacion_promedio_ = 0;
     for (int num_episodio_ = 0; num_episodio_ < cantidad; num_episodio_++) {
         calificacion_promedio_ += episodios[num_episodio_].getCalificacion();
@@ -61,6 +61,9 @@ string Serie::str() {
 }
 
 ostream& operator<<(ostream& out, const Serie& v) {
-    out << v.iD <<  ',' << v.titulo << v.duracion << v.genero << v.calificacion_promedio << "," << endl;
+    out << v.iD <<  "," << v.titulo <<  "," << v.duracion <<  "," << v.genero <<  "," << v.calificacion_promedio << endl;
+    for (int num_episodio_ = 0; num_episodio_ < v.cantidad; num_episodio_++) {
+        out << v.episodios[num_episodio_];
+    }
     return out;
 }

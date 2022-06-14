@@ -36,6 +36,6 @@ string Pelicula::str() {
 }
 
 ostream& operator<<(ostream& out, const Pelicula& v) {
-    out << v.iD <<  ',' << v.titulo << v.duracion << v.genero << v.calificacion_promedio << "," << endl;
+    out << v.iD <<  "," << v.titulo <<  "," << v.duracion <<  "," << v.genero <<  "," << v.calificacion_promedio << "," << v.oscares << endl;
     return out;
 }

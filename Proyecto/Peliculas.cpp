@@ -64,7 +64,7 @@ void Peliculas::reporteTodasPeliculas() {
     }
 
     for (int index_pelicula = 0; index_pelicula < cantidad; index_pelicula++) {
-        cout << index_pelicula << "-" << arrPtrPeliculas[index_pelicula]->str() << endl;;
+        cout << index_pelicula << "-" << *arrPtrPeliculas[index_pelicula] << endl;;
         sum_calificacion += arrPtrPeliculas[index_pelicula]->getCalificacion();
     }
 
@@ -77,7 +77,7 @@ void Peliculas::reporteConCalificacion(int calificacion_) {
         if (arrPtrPeliculas[index_pelicula]->getCalificacion() >= calificacion_) {
             if (!check_calificacion) { check_calificacion = true; }
 
-            cout << "- " << arrPtrPeliculas[index_pelicula]->str() << endl;
+            cout << "- " << *arrPtrPeliculas[index_pelicula] << endl;
         }
     }
 
@@ -92,7 +92,7 @@ void Peliculas::reporteGenero(string genero_) {
         if (arrPtrPeliculas[index_pelicula]->getGenero() == genero_) {
             if (!check_genero) { check_genero = true; }
 
-            cout << "- " << arrPtrPeliculas[index_pelicula]->str() << endl;
+            cout << "- " << *arrPtrPeliculas[index_pelicula] << endl;
         }
     }
 

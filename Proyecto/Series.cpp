@@ -91,7 +91,7 @@ void Series::reporteTodasSeries() {
     }
 
     for (int index_serie = 0; index_serie < cantidad; index_serie++) {
-        cout << index_serie << "-" << arrPtrSeries[index_serie]->str() << endl;;
+        cout << index_serie << "-" << *arrPtrSeries[index_serie] << endl;;
         sum_calificacion += arrPtrSeries[index_serie]->getCalificacion();
     }
 
@@ -104,7 +104,7 @@ void Series::reporteConCalificacionSeries(double calificacion_) {
         if (arrPtrSeries[index_serie]->getCalificacion() >= calificacion_) {
             if (!check_calificacion) { check_calificacion = true; }
 
-            cout << "- " << arrPtrSeries[index_serie]->str() << endl;
+            cout << "- " << *arrPtrSeries[index_serie] << endl;
         }
     }
 
@@ -119,7 +119,7 @@ void Series::reporteGeneroSeries(string genero) {
         if (arrPtrSeries[index_serie]->getGenero() == genero) {
             if (!check_genero) { check_genero = true; }
 
-            cout << "- " << arrPtrSeries[index_serie]->str() << endl;
+            cout << "- " << *arrPtrSeries[index_serie] << endl;
         }
     }
 
